@@ -24,20 +24,12 @@ public interface VestibularProcessor {
 	public abstract void setAno(Integer ano) throws AnoNaoSuportadoException;
 
 	/**
-	 * Retorna a url na qual sairão os resultados da primeira fase. É necessário
-	 * levar em consideração o ano.
+	 * Retorna a url na qual sairï¿½o os resultados da primeira fase. ï¿½ necessï¿½rio
+	 * levar em consideraï¿½ï¿½o o ano.
 	 * 
 	 * @return URL
 	 */
-	public abstract URL getPrimeiraFase();
-
-	/**
-	 * Retorna a url na qual sairão os resultados da segunda fase. É necessário
-	 * levar em consideração o ano.
-	 * 
-	 * @return URL
-	 */
-	public abstract URL getSegundaFase();
+	public abstract URL getResultURL();
 
 	/**
 	 * Processa os dados lidos da web para verificar se a lista da primeira fase
@@ -46,14 +38,11 @@ public interface VestibularProcessor {
 	 * 
 	 * @return lista com os nomes dos aprovados na primeira fase.
 	 */
-	public abstract List<String> getResultsPrimeiraFase(String response);
-
+	public abstract List<String> getResults(String response);
+	
 	/**
-	 * Processa os dados lidos da web para verificar se a lista da primeira fase
-	 * saiu.
-	 * @param response TODO
-	 * 
-	 * @return lista com os nomes dos aprovados na segunda fase.
+	 * Retorna o nome que serÃ¡ exibido para esse processor
+	 * @return
 	 */
-	public abstract List<String> getResultsSegundaFase(String response);
+	public abstract String getDisplayName();
 }

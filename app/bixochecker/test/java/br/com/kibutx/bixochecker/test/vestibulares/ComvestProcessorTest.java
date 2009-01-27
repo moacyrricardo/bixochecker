@@ -16,7 +16,7 @@ public class ComvestProcessorTest extends TestCase {
 				.getResourceAsStream("ComvestMockFile.html");
 		byte[] bytes = new byte[in.available()];
 		in.read(bytes);
-		List<String> list = v.getResultsPrimeiraFase(new String(bytes));
+		List<String> list = v.getResults(new String(bytes));
 		List<String> names = new ArrayList<String>();
 		names.add("Abes Mahmed Am");
 		names.add("Aurelio Ryu Komorita");

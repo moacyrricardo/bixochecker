@@ -16,7 +16,7 @@ public class FuvestProcessorTest extends TestCase {
 				.getResourceAsStream("FuvestMockFile.txt");
 		byte[] bytes = new byte[in.available()];
 		in.read(bytes);
-		List<String> list = v.getResultsPrimeiraFase(new String(bytes));
+		List<String> list = v.getResults(new String(bytes));
 		List<String> names = new ArrayList<String>();
 		names.add("Aaron Marques Fre");
 		names.add("Abel Scupeliti Artilheiro");
