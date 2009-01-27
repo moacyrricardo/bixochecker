@@ -12,13 +12,10 @@ import br.com.kibutx.bixochecker.vestibular.VestibularProcessor;
 
 public class FuvestProcessor implements VestibularProcessor {
 
-	private static final String ANO_VAR = "${ano}";
+	public static final String ANO_VAR = "${ano}";
 
 	private static final String PRI_FASE_URL = "http://www.fuvest.br/vest"
 			+ ANO_VAR + "/listas/listconv.txt";
-
-	private static final String SEG_FASE_URL = "http://www.fuvest.br/vest"
-			+ ANO_VAR + "/chamada1/publ1.txt";
 
 	private Integer ano;
 
@@ -36,31 +33,17 @@ public class FuvestProcessor implements VestibularProcessor {
 		return ano;
 	}
 
-	public URL getPrimeiraFase() {
+	public URL getResultURL() {
 		try {
 			return new URL(PRI_FASE_URL
 					.replaceAll(ANO_VAR, getAno().toString()));
 		} catch (MalformedURLException e) {
 			throw new IllegalArgumentException(
-					"Não foi possível recuperar a URL(primeira fase).", e);
+					"NÃ£o foi possÃ­vel recuperar a URL(primeira fase).", e);
 		}
 	}
 
-	public URL getSegundaFase() {
-		try {
-			return new URL(SEG_FASE_URL
-					.replaceAll(ANO_VAR, getAno().toString()));
-		} catch (MalformedURLException e) {
-			throw new IllegalArgumentException(
-					"Não foi possível recuperar a URL(primeira fase).", e);
-		}
-	}
-
-	public List<String> getResultsPrimeiraFase(String response) {
-		return processResponse(response);
-	}
-
-	public List<String> getResultsSegundaFase(String response) {
+	public List<String> getResults(String response) {
 		return processResponse(response);
 	}
 
@@ -77,4 +60,10 @@ public class FuvestProcessor implements VestibularProcessor {
 		}
 		return newList;
 	}
+
+	@Override
+	public String getDisplayName() {
+		return "Fuvest (1a. Fase)";
+	}
+	
 }
