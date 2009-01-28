@@ -8,7 +8,7 @@ package br.com.kibutx.bixochecker.gui;
 
 import javax.swing.JFrame;
 
-import br.com.kibutx.bixochecker.core.ConfigurationManager;
+import br.com.kibutx.bixochecker.core.config.ConfigurationManager;
 import br.com.kibutx.bixochecker.gui.config.Config;
 import br.com.kibutx.bixochecker.gui.config.InvalidConfigException;
 
