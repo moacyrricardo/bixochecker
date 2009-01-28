@@ -1,4 +1,4 @@
-package br.com.kibutx.bixochecker.core;
+package br.com.kibutx.bixochecker.core.config;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
