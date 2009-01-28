@@ -61,7 +61,6 @@ public class FuvestProcessor implements VestibularProcessor {
 		return newList;
 	}
 
-	@Override
 	public String getDisplayName() {
 		return "Fuvest (1a. Fase)";
 	}

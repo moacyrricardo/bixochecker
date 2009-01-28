@@ -62,7 +62,6 @@ public class ComvestProcessor implements VestibularProcessor {
 		return newList;
 	}
 
-	@Override
 	public String getDisplayName() {
 		return "Comvest (1a. Fase)";
 	}
