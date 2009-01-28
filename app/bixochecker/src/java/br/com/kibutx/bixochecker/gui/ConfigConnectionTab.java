@@ -377,7 +377,6 @@ public class ConfigConnectionTab extends javax.swing.JPanel implements Config {
 		}
 	}
 
-	@Override
 	public void load(ConfigurationManager config) {
 		chkProxyEnable.setSelected(new Boolean(config.get(ConfigurationManager.CONN_PROXY_ENABLED)));
 		txtProxyHost.setText(config.get(ConfigurationManager.CONN_PROXY_HOST));
@@ -388,7 +387,6 @@ public class ConfigConnectionTab extends javax.swing.JPanel implements Config {
 		chkProxyEnabledSelected(null);
 	}
 
-	@Override
 	public void save(ConfigurationManager config) throws InvalidConfigException {
 		// TODO Auto-generated method stub
 		validateFields();

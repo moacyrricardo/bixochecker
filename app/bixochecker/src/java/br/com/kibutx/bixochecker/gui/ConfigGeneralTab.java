@@ -117,12 +117,10 @@ public class ConfigGeneralTab extends javax.swing.JPanel implements Config {
 		}
 	}
 
-	@Override
 	public void load(ConfigurationManager config) {
 		txtSleepTime.setText(config.get(ConfigurationManager.SLEEP_TIME));
 	}
 
-	@Override
 	public void save(ConfigurationManager config) throws InvalidConfigException {
 		// TODO Auto-generated method stub
 		validateFields();

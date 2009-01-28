@@ -17,7 +17,6 @@ public class ResultsChecker implements Runnable {
 
 	private Integer seconds;
 
-	@Override
 	public void run() {
 		while (running.booleanValue()) {
 			for (int i = 0; i < seconds.intValue() || running.booleanValue(); i++) {
