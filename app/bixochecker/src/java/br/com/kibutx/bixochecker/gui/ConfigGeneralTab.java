@@ -6,7 +6,7 @@
 
 package br.com.kibutx.bixochecker.gui;
 
-import br.com.kibutx.bixochecker.core.config.ConfigurationManager;
+import br.com.kibutx.bixochecker.config.ConfigurationManager;
 import br.com.kibutx.bixochecker.gui.config.Config;
 import br.com.kibutx.bixochecker.gui.config.InvalidConfigException;
 

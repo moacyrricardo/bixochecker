@@ -12,7 +12,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import net.sourceforge.napkinlaf.NapkinLookAndFeel;
-import br.com.kibutx.bixochecker.core.config.ConfigurationManager;
+import br.com.kibutx.bixochecker.config.ConfigurationManager;
 import br.com.kibutx.bixochecker.gui.config.InvalidConfigException;
 
 /**

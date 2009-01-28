@@ -1,6 +1,6 @@
 package br.com.kibutx.bixochecker.gui.config;
 
-import br.com.kibutx.bixochecker.core.config.ConfigurationManager;
+import br.com.kibutx.bixochecker.config.ConfigurationManager;
 
 public interface Config {
 	public abstract void load(ConfigurationManager config);
