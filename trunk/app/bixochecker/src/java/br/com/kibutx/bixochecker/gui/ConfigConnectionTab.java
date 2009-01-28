@@ -382,10 +382,10 @@ public class ConfigConnectionTab extends javax.swing.JPanel implements Config {
 		chkProxyEnable.setSelected(new Boolean(config.get(ConfigurationManager.CONN_PROXY_ENABLED)));
 		txtProxyHost.setText(config.get(ConfigurationManager.CONN_PROXY_HOST));
 		txtProxyPort.setText(config.get(ConfigurationManager.CONN_PROXY_PORT));
-		chkAuthEnabled.setSelected(new Boolean(config
-				.get(ConfigurationManager.CONN_PROXY_AUTH_ENABLED)));
+		chkAuthEnabled.setSelected(new Boolean(config.get(ConfigurationManager.CONN_PROXY_AUTH_ENABLED)));
 		txtUsername.setText(config.get(ConfigurationManager.CONN_PROXY_AUTH_USERNAME));
 		pwdPassword.setText(config.get(ConfigurationManager.CONN_PROXY_AUTH_PASSWORD));
+		chkProxyEnabledSelected(null);
 	}
 
 	@Override

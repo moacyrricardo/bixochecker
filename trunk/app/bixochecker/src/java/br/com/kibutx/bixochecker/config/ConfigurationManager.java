@@ -3,6 +3,7 @@ package br.com.kibutx.bixochecker.config;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 
@@ -12,7 +13,7 @@ import java.util.Properties;
  *
  */
 public class ConfigurationManager {
-	private static final String FILE_NAME = "configuration.cfg";	
+	private static final String FILE_NAME = "/configuration.cfg";	
 	public static ConfigurationManager config;
 	/*Start Fields*/
 	public static final String SLEEP_TIME = "sleep.time";
@@ -48,7 +49,8 @@ public class ConfigurationManager {
 	private boolean loadConfiguration(String f) {
 		properties = new Properties();
 		try {
-			properties.load(getClass().getResourceAsStream(f));
+			InputStream in = getClass().getResourceAsStream(f);
+			properties.load(in);
 			return true;
 		} catch (IOException e) {
 			// debug was not able to read configuration file
@@ -82,7 +84,8 @@ public class ConfigurationManager {
 	}
 
 	public String get(String key) {
-		return properties.getProperty(key);
+		String g = properties.getProperty(key); 
+		return g;
 	}
 
 	public void set(String key, String value) {
