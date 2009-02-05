@@ -36,7 +36,7 @@ public class FuvestProcessor implements VestibularProcessor {
 	public URL getResultURL() {
 		try {
 			return new URL(PRI_FASE_URL
-					.replaceAll(ANO_VAR, getAno().toString()));
+					.replace(ANO_VAR, getAno().toString()));
 		} catch (MalformedURLException e) {
 			throw new IllegalArgumentException(
 					"Não foi possível recuperar a URL(primeira fase).", e);

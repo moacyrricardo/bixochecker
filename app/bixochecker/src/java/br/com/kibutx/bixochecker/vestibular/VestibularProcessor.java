@@ -3,6 +3,8 @@ package br.com.kibutx.bixochecker.vestibular;
 import java.net.URL;
 import java.util.List;
 
+import br.com.kibutx.bixochecker.vestibulares.NaoSaiuListaException;
+
 /**
  * Interface utilizada para buscar os resultados.
  * @author mricardo
@@ -37,6 +39,7 @@ public interface VestibularProcessor {
 	 * @param response TODO
 	 * 
 	 * @return lista com os nomes dos aprovados na primeira fase.
+	 * @throws NaoSaiuListaException 
 	 */
 	public abstract List<String> getResults(String response);
 	

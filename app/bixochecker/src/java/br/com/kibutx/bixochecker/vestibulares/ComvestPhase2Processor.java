@@ -12,7 +12,7 @@ public class ComvestPhase2Processor extends ComvestProcessor {
 	public URL getResultURL() {
 		try {
 			return new URL(SEG_FASE_URL
-					.replaceAll(ANO_VAR, getAno().toString()));
+					.replace(ANO_VAR, getAno().toString()));
 		} catch (MalformedURLException e) {
 			throw new IllegalArgumentException(
 					"Não foi possível recuperar a URL(segunda fase).", e);
@@ -21,7 +21,7 @@ public class ComvestPhase2Processor extends ComvestProcessor {
 
 	@Override
 	public String getDisplayName() {
-		return "Fuvest (2a. Fase)";
+		return "Comvest (2a. Fase)";
 	}
 
 }

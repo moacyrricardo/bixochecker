@@ -13,6 +13,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 import net.sourceforge.napkinlaf.NapkinLookAndFeel;
 import br.com.kibutx.bixochecker.config.ConfigurationManager;
+import br.com.kibutx.bixochecker.config.ProcessorsConfigManager;
 import br.com.kibutx.bixochecker.gui.config.InvalidConfigException;
 
 /**
@@ -24,17 +25,21 @@ public class ConfigurationFrame extends javax.swing.JFrame {
 	private static final long serialVersionUID = -958815760610826844L;
 	private static final String GENERALTAB_TITLE = "Geral";
 	private static final String CONNECTIONTAB_TITLE = "Conexão";
+	private static final String CHECKERTAB_TITLE = "Vestibulares";
 	private static final String CONFIG_TITLE = "BixoChecker Config";
 
 	private ConfigGeneralTab generalTab;
 	private ConfigConnectionTab connectionTab;
+	private CheckerTab checkerTab;
 	private ConfigurationManager configurationManager;
+	private ProcessorsConfigManager processorsConfigManager;
 
 	/** Creates new form ConfigurationFrame */
-	public ConfigurationFrame(ConfigurationManager configurationManager) {
+	public ConfigurationFrame(ConfigurationManager configurationManager, ProcessorsConfigManager processorsConfigManager) {
 		initComponents();
 		initTabs();
 		this.configurationManager = configurationManager;
+		this.processorsConfigManager = processorsConfigManager;
 	}
 
 	/**
@@ -153,8 +158,10 @@ public class ConfigurationFrame extends javax.swing.JFrame {
 	public void initTabs() {
 		generalTab = new ConfigGeneralTab();
 		connectionTab = new ConfigConnectionTab();
+		checkerTab = new CheckerTab();
 		tabbedPane.add(GENERALTAB_TITLE, generalTab);
 		tabbedPane.add(CONNECTIONTAB_TITLE, connectionTab);
+		tabbedPane.add(CHECKERTAB_TITLE,checkerTab);
 	}
 
 	// Variables declaration - do not modify//GEN-BEGIN:variables
@@ -172,13 +179,16 @@ public class ConfigurationFrame extends javax.swing.JFrame {
 	public void loadConfig() {
 		generalTab.load(configurationManager);
 		connectionTab.load(configurationManager);
+		checkerTab.load(this.processorsConfigManager);
 	}
 
 	public void saveConfig(boolean closeIfSuccessfull) {
 		try {
 			generalTab.save(configurationManager);
 			connectionTab.save(configurationManager);
+			checkerTab.save(this.processorsConfigManager);
 			configurationManager.persist();
+			processorsConfigManager.persist();
 			JOptionPane.showMessageDialog(this, "Configurações Salvas!",
 					"Configurações", JOptionPane.INFORMATION_MESSAGE);
 			if (closeIfSuccessfull) {

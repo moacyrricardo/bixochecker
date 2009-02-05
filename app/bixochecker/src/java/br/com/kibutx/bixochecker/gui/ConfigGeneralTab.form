@@ -49,11 +49,13 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="txtSleepTime" alignment="0" max="32767" attributes="1"/>
                       <Component id="lblSleepTime" alignment="0" max="32767" attributes="1"/>
+                      <Component id="lblRequestYear" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtRequestYear" alignment="0" max="32767" attributes="1"/>
                   </Group>
                   <EmptySpace pref="206" max="32767" attributes="0"/>
               </Group>
@@ -66,7 +68,11 @@
                   <Component id="lblSleepTime" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtSleepTime" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="183" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblRequestYear" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="txtRequestYear" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="127" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -78,6 +84,19 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="txtSleepTime">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblRequestYear">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ano Vestibular"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtRequestYear">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="2009"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtRequestYearActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

@@ -7,35 +7,27 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Properties;
 
+import br.com.kibutx.bixochecker.vestibular.VestibularProcessor;
+
 /**
- * Classe responsavel pelo controle das configurações
+ * Classe responsavel pelo controle dos vestibulars processors
  * @author moa
  *
  */
-public class ConfigurationManager {
-	private static final String FILE_NAME = "/configuration.cfg";	
-	public static ConfigurationManager config;
-	/*Start Fields*/
-	public static final String GENERAL_SLEEP_TIME = "general.sleep.time";
-	public static final String GENERAL_REQUEST_YEAR = "general.request.year";
-	public static final String CONN_PROXY_ENABLED = "conn.proxy.enabled";
-	public static final String CONN_PROXY_HOST = "conn.proxy.host";
-	public static final String CONN_PROXY_PORT = "conn.proxy.port";
-	public static final String CONN_PROXY_AUTH_ENABLED = "conn.proxy.auth.enabled";
-	public static final String CONN_PROXY_AUTH_USERNAME = "conn.proxy.auth.username";
-	public static final String CONN_PROXY_AUTH_PASSWORD = "conn.proxy.auth.password";
-	/*End Fields*/
+public class ProcessorsConfigManager {
+	private static final String FILE_NAME = "/processors.cfg";	
+	public static ProcessorsConfigManager config;
 	
 	private Properties properties;
 	
-	public static ConfigurationManager getInstance(){
+	public static ProcessorsConfigManager getInstance(){
 		if(config == null){
-			config = new ConfigurationManager();
+			config = new ProcessorsConfigManager();
 		}
 		return config;
 	}
 	
-	private ConfigurationManager(){
+	private ProcessorsConfigManager(){
 		reload();
 	}
 
@@ -83,13 +75,17 @@ public class ConfigurationManager {
 		}
 		return true;
 	}
-
-	public String get(String key) {
-		String g = properties.getProperty(key); 
-		return g;
+	
+	private String getKey(VestibularProcessor v){
+		return v.getClass().getName();
 	}
 
-	public void set(String key, String value) {
-		properties.setProperty(key, value);
+	public Boolean get(VestibularProcessor v) {
+		String g = properties.getProperty(getKey(v));
+		return new Boolean(g);
+	}
+
+	public void set(VestibularProcessor v, Boolean value) {
+		properties.setProperty(getKey(v), value.toString());
 	}
 }
