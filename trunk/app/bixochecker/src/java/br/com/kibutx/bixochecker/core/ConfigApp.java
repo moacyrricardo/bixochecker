@@ -5,6 +5,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 import net.sourceforge.napkinlaf.NapkinLookAndFeel;
 import br.com.kibutx.bixochecker.config.ConfigurationManager;
+import br.com.kibutx.bixochecker.config.ProcessorsConfigManager;
 import br.com.kibutx.bixochecker.gui.ConfigurationFrame;
 
 public class ConfigApp {
@@ -16,7 +17,7 @@ public class ConfigApp {
 			e.printStackTrace();
 		}
 		
-		ConfigurationFrame configFrame = new ConfigurationFrame(ConfigurationManager.getInstance());
+		ConfigurationFrame configFrame = new ConfigurationFrame(ConfigurationManager.getInstance(),ProcessorsConfigManager.getInstance());
 		configFrame.setVisible(true);
 		configFrame.loadConfig();
 	}

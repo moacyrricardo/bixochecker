@@ -30,80 +30,84 @@ public class ConfigGeneralTab extends javax.swing.JPanel implements Config {
 	 */
 	@SuppressWarnings("unchecked")
 	// <editor-fold defaultstate="collapsed" desc="Generated
-	// Code">//GEN-BEGIN:initComponents
-	private void initComponents() {
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
 
-		pnlGeneral = new javax.swing.JPanel();
-		lblSleepTime = new javax.swing.JLabel();
-		txtSleepTime = new javax.swing.JFormattedTextField();
+        pnlGeneral = new javax.swing.JPanel();
+        lblSleepTime = new javax.swing.JLabel();
+        txtSleepTime = new javax.swing.JFormattedTextField();
+        lblRequestYear = new javax.swing.JLabel();
+        txtRequestYear = new javax.swing.JTextField();
 
-		pnlGeneral.setBorder(javax.swing.BorderFactory.createTitledBorder(
-				javax.swing.BorderFactory.createEtchedBorder(), "Geral"));
+        pnlGeneral.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Geral"));
 
-		lblSleepTime.setText("Tempo de pausa");
+        lblSleepTime.setText("Tempo de pausa");
 
-		org.jdesktop.layout.GroupLayout pnlGeneralLayout = new org.jdesktop.layout.GroupLayout(
-				pnlGeneral);
-		pnlGeneral.setLayout(pnlGeneralLayout);
-		pnlGeneralLayout
-				.setHorizontalGroup(pnlGeneralLayout
-						.createParallelGroup(
-								org.jdesktop.layout.GroupLayout.LEADING)
-						.add(
-								pnlGeneralLayout
-										.createSequentialGroup()
-										.addContainerGap()
-										.add(
-												pnlGeneralLayout
-														.createParallelGroup(
-																org.jdesktop.layout.GroupLayout.TRAILING,
-																false)
-														.add(
-																org.jdesktop.layout.GroupLayout.LEADING,
-																txtSleepTime)
-														.add(
-																org.jdesktop.layout.GroupLayout.LEADING,
-																lblSleepTime,
-																org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-																org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-																Short.MAX_VALUE))
-										.addContainerGap(206, Short.MAX_VALUE)));
-		pnlGeneralLayout.setVerticalGroup(pnlGeneralLayout.createParallelGroup(
-				org.jdesktop.layout.GroupLayout.LEADING).add(
-				pnlGeneralLayout.createSequentialGroup().addContainerGap().add(
-						lblSleepTime).addPreferredGap(
-						org.jdesktop.layout.LayoutStyle.RELATED).add(
-						txtSleepTime,
-						org.jdesktop.layout.GroupLayout.PREFERRED_SIZE,
-						org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-						org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(183, Short.MAX_VALUE)));
+        lblRequestYear.setText("Ano Vestibular");
 
-		org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(
-				this);
-		this.setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(
-				org.jdesktop.layout.GroupLayout.LEADING).add(
-				layout.createSequentialGroup().addContainerGap().add(
-						pnlGeneral,
-						org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-						org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-						Short.MAX_VALUE).addContainerGap()));
-		layout.setVerticalGroup(layout.createParallelGroup(
-				org.jdesktop.layout.GroupLayout.LEADING).add(
-				layout.createSequentialGroup().addContainerGap().add(
-						pnlGeneral,
-						org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-						org.jdesktop.layout.GroupLayout.DEFAULT_SIZE,
-						Short.MAX_VALUE).addContainerGap()));
-	}// </editor-fold>//GEN-END:initComponents
+        txtRequestYear.setText("2009");
+        txtRequestYear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRequestYearActionPerformed(evt);
+            }
+        });
 
-	// Variables declaration - do not modify//GEN-BEGIN:variables
-	private javax.swing.JLabel lblSleepTime;
-	private javax.swing.JPanel pnlGeneral;
-	private javax.swing.JFormattedTextField txtSleepTime;
+        org.jdesktop.layout.GroupLayout pnlGeneralLayout = new org.jdesktop.layout.GroupLayout(pnlGeneral);
+        pnlGeneral.setLayout(pnlGeneralLayout);
+        pnlGeneralLayout.setHorizontalGroup(
+            pnlGeneralLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(pnlGeneralLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(pnlGeneralLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(txtSleepTime)
+                    .add(lblSleepTime, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(lblRequestYear)
+                    .add(txtRequestYear))
+                .addContainerGap(206, Short.MAX_VALUE))
+        );
+        pnlGeneralLayout.setVerticalGroup(
+            pnlGeneralLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(pnlGeneralLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(lblSleepTime)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(txtSleepTime, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(lblRequestYear)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(txtRequestYear, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(127, Short.MAX_VALUE))
+        );
 
-	// End of variables declaration//GEN-END:variables
+        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
+                .addContainerGap()
+                .add(pnlGeneral, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
+                .addContainerGap()
+                .add(pnlGeneral, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+private void txtRequestYearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRequestYearActionPerformed
+// TODO add your handling code here:
+}//GEN-LAST:event_txtRequestYearActionPerformed
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel lblRequestYear;
+    private javax.swing.JLabel lblSleepTime;
+    private javax.swing.JPanel pnlGeneral;
+    private javax.swing.JTextField txtRequestYear;
+    private javax.swing.JFormattedTextField txtSleepTime;
+    // End of variables declaration//GEN-END:variables
 
 	private void validateFields() throws InvalidConfigException {
 		Long value = null;
@@ -118,13 +122,15 @@ public class ConfigGeneralTab extends javax.swing.JPanel implements Config {
 	}
 
 	public void load(ConfigurationManager config) {
-		txtSleepTime.setText(config.get(ConfigurationManager.SLEEP_TIME));
+		txtSleepTime.setText(config.get(ConfigurationManager.GENERAL_SLEEP_TIME));
+		txtRequestYear.setText(config.get(ConfigurationManager.GENERAL_REQUEST_YEAR));
 	}
 
 	public void save(ConfigurationManager config) throws InvalidConfigException {
 		// TODO Auto-generated method stub
 		validateFields();
-		config.set(ConfigurationManager.SLEEP_TIME, txtSleepTime.getText());
+		config.set(ConfigurationManager.GENERAL_SLEEP_TIME, txtSleepTime.getText());
+		config.set(ConfigurationManager.GENERAL_REQUEST_YEAR, txtRequestYear.getText());
 	}
 
 }

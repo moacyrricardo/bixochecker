@@ -6,10 +6,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import junit.framework.TestCase;
+import br.com.kibutx.bixochecker.vestibular.AnoNaoSuportadoException;
 import br.com.kibutx.bixochecker.vestibular.VestibularProcessor;
 import br.com.kibutx.bixochecker.vestibulares.ComvestProcessor;
 
 public class ComvestProcessorTest extends TestCase {
+	public void testURL() {
+		VestibularProcessor v = new ComvestProcessor();
+		try {
+			v.setAno(new Integer(2009));
+		} catch (AnoNaoSuportadoException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		assertEquals(v.getResultURL().toString(),"http://www.comvest.unicamp.br/vest2009/F1/aprova1/geral.html");
+	}
 	public void testGetResultadosPrimeiraFase() throws IOException {
 		VestibularProcessor v = new ComvestProcessor();
 		InputStream in = ComvestProcessorTest.class

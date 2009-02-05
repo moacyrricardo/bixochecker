@@ -33,7 +33,7 @@ public class ComvestProcessor implements VestibularProcessor {
 	public URL getResultURL() {
 		try {
 			return new URL(PRI_FASE_URL
-					.replaceAll(ANO_VAR, getAno().toString()));
+					.replace(ANO_VAR, getAno().toString()));
 		} catch (MalformedURLException e) {
 			throw new IllegalArgumentException(
 					"N�o foi poss�vel recuperar a URL(primeira fase).", e);
