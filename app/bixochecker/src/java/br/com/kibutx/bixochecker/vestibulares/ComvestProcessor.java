@@ -8,9 +8,9 @@ import java.util.Calendar;
 import java.util.List;
 
 import br.com.kibutx.bixochecker.vestibular.AnoNaoSuportadoException;
-import br.com.kibutx.bixochecker.vestibular.VestibularProcessor;
+import br.com.kibutx.bixochecker.vestibular.SingleListVestibularProcessor;
 
-public class ComvestProcessor implements VestibularProcessor {
+public class ComvestProcessor extends SingleListVestibularProcessor {
 
 	public static final String ANO_VAR = "${ano}";
 
