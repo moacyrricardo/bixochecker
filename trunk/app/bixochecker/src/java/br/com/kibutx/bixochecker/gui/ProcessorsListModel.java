@@ -13,6 +13,7 @@ import br.com.kibutx.bixochecker.vestibulares.ComvestPhase2Processor;
 import br.com.kibutx.bixochecker.vestibulares.ComvestProcessor;
 import br.com.kibutx.bixochecker.vestibulares.FuvestPhase2Processor;
 import br.com.kibutx.bixochecker.vestibulares.FuvestProcessor;
+import br.com.kibutx.bixochecker.vestibulares.PuccampProcessor;
 
 public class ProcessorsListModel extends AbstractListModel {
 
@@ -30,6 +31,7 @@ public class ProcessorsListModel extends AbstractListModel {
 		vestibularProcessors.add(new ComvestPhase2Processor());
 		vestibularProcessors.add(new FuvestProcessor());
 		vestibularProcessors.add(new FuvestPhase2Processor());
+		vestibularProcessors.add(new PuccampProcessor());
 	}
 
 	public void load(ProcessorsConfigManager config) {

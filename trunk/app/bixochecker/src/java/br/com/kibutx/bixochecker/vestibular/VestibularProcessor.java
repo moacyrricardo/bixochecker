@@ -3,8 +3,6 @@ package br.com.kibutx.bixochecker.vestibular;
 import java.net.URL;
 import java.util.List;
 
-import br.com.kibutx.bixochecker.vestibulares.NaoSaiuListaException;
-
 /**
  * Interface utilizada para buscar os resultados.
  * @author mricardo
@@ -26,12 +24,14 @@ public interface VestibularProcessor {
 	public abstract void setAno(Integer ano) throws AnoNaoSuportadoException;
 
 	/**
-	 * Retorna a url na qual sair�o os resultados da primeira fase. � necess�rio
+	 * Retorna a url na qual sairao os resultados da primeira fase. � necess�rio
 	 * levar em considera��o o ano.
+	 * 
+	 * Alguns vestibulares nao liberam a lista completa, apenas em pedaços
 	 * 
 	 * @return URL
 	 */
-	public abstract URL getResultURL();
+	public abstract List<URL> getResultsURL();
 
 	/**
 	 * Processa os dados lidos da web para verificar se a lista da primeira fase

@@ -1,6 +1,8 @@
 package br.com.kibutx.bixochecker.core;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.httpclient.HttpClient;
@@ -70,10 +72,11 @@ public class ResultsChecker implements Runnable {
 	public void run() {
 		while (running.booleanValue()) {
 			int s = getSeconds();
-			System.out.println("Aguardando o início das requisições...(em "+s+" seg)");
+			System.out.println("Aguardando o início das requisições...(em " + s
+					+ " seg)");
 			for (int i = 0; i < s && running.booleanValue(); i++) {
 				try {
-					System.out.print((i+1)+".");
+					System.out.print((i + 1) + ".");
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 					// TODO Auto-generated catch block
@@ -94,27 +97,42 @@ public class ResultsChecker implements Runnable {
 						continue;
 					}
 					GetMethod met = null;
-					met = new GetMethod(p.getResultURL().toString());
-					// met = new GetMethod(p.getSegundaFase().toString());
-					try {
-						int code = client.executeMethod(met);
-						if (code == 200) {
-							System.out.println("Saiu da "+p.getDisplayName()+"!!");
-							List<String> results = p.getResults(met
-									.getResponseBodyAsString());
-							pConfigMan.set(p, Boolean.FALSE);
-							ResultsListFrame dis = new ResultsListFrame();
-							dis.setTitle("Resultados da " + p.getDisplayName());
-							dis.setVisible(true);
-							dis.setList(getListAsText(results));
-							// show window with results
+					ResultsListFrame dis = null;
+					List<String> results = new ArrayList<String>();
+					for (URL url : p.getResultsURL()) {
+						met = new GetMethod(url.toString());
+						// met = new GetMethod(p.getSegundaFase().toString());
+						try {
+							int code = client.executeMethod(met);
+							if (code == 200) {
+								results.addAll(p.getResults(met
+										.getResponseBodyAsString()));
+								// show window with results
+							}
+						} catch (HttpException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						} finally {
+							if(met != null){
+								met.releaseConnection();
+							}
 						}
-					} catch (HttpException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
+					}
+
+					if (results.size() > 0) {
+						System.out.println("Saiu da " + p.getDisplayName());
+
+						dis = new ResultsListFrame();
+						dis.setTitle("Resultados da " + p.getDisplayName());
+						dis.setVisible(true);
+//						dis.setList(getListAsText(results));
+						dis.setList(results);
+						
+
+						pConfigMan.set(p, Boolean.FALSE);
 					}
 				}
 				System.out.println("Fim das requisições.");

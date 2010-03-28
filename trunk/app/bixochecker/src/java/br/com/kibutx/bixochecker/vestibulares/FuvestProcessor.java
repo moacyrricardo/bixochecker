@@ -8,9 +8,9 @@ import java.util.Calendar;
 import java.util.List;
 
 import br.com.kibutx.bixochecker.vestibular.AnoNaoSuportadoException;
-import br.com.kibutx.bixochecker.vestibular.VestibularProcessor;
+import br.com.kibutx.bixochecker.vestibular.SingleListVestibularProcessor;
 
-public class FuvestProcessor implements VestibularProcessor {
+public class FuvestProcessor extends SingleListVestibularProcessor {
 
 	public static final String ANO_VAR = "${ano}";
 
@@ -35,8 +35,7 @@ public class FuvestProcessor implements VestibularProcessor {
 
 	public URL getResultURL() {
 		try {
-			return new URL(PRI_FASE_URL
-					.replace(ANO_VAR, getAno().toString()));
+			return new URL(PRI_FASE_URL.replace(ANO_VAR, getAno().toString()));
 		} catch (MalformedURLException e) {
 			throw new IllegalArgumentException(
 					"Não foi possível recuperar a URL(primeira fase).", e);
@@ -64,5 +63,5 @@ public class FuvestProcessor implements VestibularProcessor {
 	public String getDisplayName() {
 		return "Fuvest (1a. Fase)";
 	}
-	
+
 }
